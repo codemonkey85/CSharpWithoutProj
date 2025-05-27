@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "inputs": [
+        {
+            "id": "programArgs",
+            "type": "promptString",
+            "description": "Enter program arguments (space-separated)"
+        }
+    ],
+    "configurations": [
+        {
+            "name": ".NET 10: Run Single C# File",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "dotnet",
+            "args": [
+                "run",
+                "${file}",
+                "--",
+                "${input:programArgs}"
+            ],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopAtEntry": false
+        }
+    ]
+}
