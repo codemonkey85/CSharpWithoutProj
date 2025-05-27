@@ -1,0 +1,40 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Check .NET SDK version",
+      "type": "shell",
+      "command": "dotnet",
+      "args": ["--version"],
+      "problemMatcher": [],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Run Script with .NET 10 Preview 4",
+      "type": "shell",
+      "dependsOn": "Check .NET SDK version",
+      "command": "dotnet",
+      "args": [
+        "run",
+        "${file}",
+        "--",
+        "${input:scriptArgs}"
+      ],
+      "problemMatcher": [],
+      "group": "build"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "scriptArgs",
+      "type": "promptString",
+      "description": "Enter script args (space-separated)"
+    }
+  ]
+}

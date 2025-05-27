@@ -1,27 +1,28 @@
 {
-    "version": "0.2.0",
-    "inputs": [
-        {
-            "id": "programArgs",
-            "type": "promptString",
-            "description": "Enter program arguments (space-separated)"
-        }
-    ],
-    "configurations": [
-        {
-            "name": ".NET 10: Run Single C# File",
-            "type": "coreclr",
-            "request": "launch",
-            "program": "dotnet",
-            "args": [
-                "run",
-                "${file}",
-                "--",
-                "${input:programArgs}"
-            ],
-            "cwd": "${workspaceFolder}",
-            "console": "integratedTerminal",
-            "stopAtEntry": false
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": ".NET 10 Script with Args",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "dotnet",
+      "args": [
+        "run",
+        "${file}",
+        "--",
+        "${input:scriptArgs}"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "stopAtEntry": false,
+      "preLaunchTask": "Check .NET SDK version"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "scriptArgs",
+      "type": "promptString",
+      "description": "Enter script args (space-separated)"
+    }
+  ]
 }
