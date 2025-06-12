@@ -16,7 +16,7 @@
       }
     },
     {
-      "label": "Run Script with .NET 10 Preview 4",
+      "label": "Run Script with .NET 10 Preview",
       "type": "shell",
       "dependsOn": "Check .NET SDK version",
       "command": "dotnet",
