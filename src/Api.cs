@@ -1,6 +1,6 @@
 ﻿#!/usr/bin/env dotnet run
 #:sdk Microsoft.NET.Sdk.Web
-#:property LangVersion preview
+#:property LangVersion=preview
 
 var builder = WebApplication.CreateBuilder(args);
 
