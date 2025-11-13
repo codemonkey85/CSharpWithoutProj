@@ -1,5 +1,4 @@
 ﻿#!/usr/bin/env dotnet run
-#:property LangVersion=preview
 
 #:property UseWindowsForms=true
 #:property TargetFramework=net10.0-windows
